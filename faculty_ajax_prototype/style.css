@@ -1,0 +1,29 @@
+body{
+	background-color:lightgrey;
+}
+#banner{
+	background-color:purple;
+	height:200px;
+	width: 80%;
+	font-size:500%;
+}
+#buttons{
+	height:30px;
+	width:20%;
+	text-align:center;
+}
+#faculty{
+	height:500px;
+	width:40%;
+	background-color:white;
+}
+.center{
+	margin:0 auto;
+	clear:both;
+}
+.button{
+	float:left;
+	height:60px;
+	width:60px;
+	overflow:auto;
+}

@@ -3,7 +3,6 @@ body
     background: lightgrey;
 }
 
-
 #banner 
 {
     height: 200px;
@@ -23,6 +22,11 @@ body
     background-color: #4C0B5F;
     font-family: helvetica;
     font-weight: bold;
+}
+
+.schoolColors a
+{
+    color:#9799AA;
 }
 
 .nonheader
@@ -66,11 +70,17 @@ header ul li
     border-radius: 15px;
     float:left;
     width: 300px;
-    margin-left: 100px;
+    margin-left: 50px;
     padding: 10px 10px 10px 10px;
     list-style-type: none;    
     font-size: 20px;    
     border-radius: 15px;
+}
+
+#news h3
+{
+    margin-top: 50px;
+    text-decoration: underline;
 }
 
 #news ul li
@@ -95,41 +105,75 @@ header ul li
     border-radius: 15px;
     margin: 0 auto;
     background: white;
-    height: 600px;
-    width: 1400px;
+    width: 1500px;
     margin-top: 300px;
+    
 }
 
-#content-focus
+.content-focus
 {
     border-radius: 15px;
-    margin-left: 50px;
-    width: 800px;
+    margin-left: 25px;
+    width: 900px;
     color: white;
     outline-style: solid;
     padding: 20px 20px 20px 20px;
     display: inline-block;
 }
 
-#content-focus-right
+.content-focus-right
 {
     float: right;
     padding-left: 15px;
     width: 200px;
 }
 
-#content-focus img
+.content-focus-right-fac
+{
+    float: right;
+    padding-left: 15px;
+    width: 200px;
+}
+
+.content-focus img
 {
     float:left;
 }
 
-#content-focus-bottom
+.content-focus-bottom
 {
     clear: left;    
     padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.facItem
+{
+    border-radius: 15px;
+    float:left;
+    outline-style: none;
+    width:500px;  
+    padding: 20px 20px 20px 20px;
+    margin-left:15px;
+    margin-bottom:20px;
+}
+
+.fr-fac
+{
+    width: 300px;
+}
+
+.facimage
+{
+    max-height: 150px;
+}
+
+.centeredItem
+{
+    margin-left: 50px;
 }
 
 footer
 {   
-    
+    font-style:italic;
 }

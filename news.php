@@ -8,11 +8,13 @@
             
         -->
             
-            <ul><h3>News Item</h3>
+            <ul>
+                <li><h3>News Item</h3></li>
                 <li>This is some news information</li>
             </ul>
             
-            <ul><h3>News Item</h3>
+            <ul>
+                <li><h3>News Item</h3></li>
                 <li>This is some news information</li>
             </ul>
             

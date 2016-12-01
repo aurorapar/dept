@@ -1,7 +1,7 @@
         
  
         
-           
+<div class="content-focus schoolColors contentItem">           
             <img src="http://cs.winona.edu/styles/Images/ericbusch.jpg" alt="blah">
 
             <div class="content-focus-right"> 

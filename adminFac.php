@@ -34,7 +34,7 @@
             if($count==1){
                 print "$day <br>";
             }
-            print "<label>Start Time</label><br><select id=\"start$day$count\" name=\"start$day$count\">";
+            print "<label>Start Time</label><select id=\"start$day$count\" name=\"start$day$count\">";
             print "<option label=\" \" value=\"null \"> </option>";
             $am=7;
             $pm=1;
@@ -56,7 +56,7 @@
         }
         print"</select>";
         print"<br>";
-        print "<label>End Time</label><br><select id=\"end$day$count\" name=\"end$day$count\">";
+        print "<label>End Time</label><select id=\"end$day$count\" name=\"end$day$count\">";
         print "<option label=\" \" value=\"null\"> </option>";
             $am=7;
             $pm=1;

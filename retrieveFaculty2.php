@@ -1,4 +1,3 @@
-<div class="content-focus-fac schoolColors contentItem">
 <?php 
     $db = new PDO("mysql:dbname=344_project;host=localhost","root");
     $query = "SELECT * FROM `faculty`;";
@@ -13,26 +12,26 @@
         
         $phone = substr_replace($row['phone_num'], "-", 3, 0);
         $phone = substr_replace($phone, "-", 7, 0);
+        
+        
 ?>
-    <div class="facItem schoolColors">
-            <img class="facimage" src="http://localhost/dept/images/<?= $img ?>.jpg" alt="<?= $row['name'] ?>'s picture">
 
-            <div class="content-focus-right content-focus-right-fac"> 
-                <h3><?= $row['name'] ?></h3>
-                <br>
-                <?= $row['alma_mater'] ?>
-            </div>
-           
-            <div class="content-focus-bottom hours-table">
-            
-                <?= $phone ?><br>
-                <?= $row['email'] ?><br>
-                Preferred Communication: <?= $row['pref_contact_method'] ?><br>
-                <?= $row['building'] ?> <?= $row['room_num'] ?><br><br>
-            
-                <h3>Office Hours</h3>
-                <table>                
-                    <tr>
+    <div class="facItem schoolColors">
+        <img class="facimage" src="http://localhost/dept/images/<?= $img ?>.jpg" alt="<?= $row['name'] ?>'s picture">
+
+                <div class="content-focus-right fr-fac"> 
+                    <h2><?= $row['name'] ?></h3>
+                    Preferred Contact: <?= $row['pref_contact_method'] ?><br>
+                    <?= $phone ?><br>
+                    <?= $row['email'] ?><br>                    
+                    <?= $row['building'] ?> <?= $row['room_num'] ?><br>
+                    <br>
+                </div>
+               
+                <div class="content-focus-bottom">
+                    <h3>Office Hours</h3>
+                    <table>
+                        <tr>
 <?php
         $query2 = "SELECT * FROM `office_hours` WHERE faculty_id = " . $row['faculty_id'] . ' ORDER BY start_time;';
         $results2 = $db->query($query2);
@@ -57,7 +56,7 @@
                    {
                         $splitHours[$day] = 0;
 ?>
-                        <th><?= $dayNames[$day] ?></th>
+                            <th><?= $dayNames[$day] ?></th>
 <?php
                    }
                    $splitHours[$day]++;
@@ -65,7 +64,7 @@
             }
         }
 ?>
-                    </tr>
+                        </tr>
 <?php
                 // This is REALLY REALLY REALLY bad code
                 // Functional, but a new DB layout would
@@ -75,7 +74,7 @@
                 while($count >= 0)
                 {
 ?>
-                    <tr>
+                        <tr>
 <?php
                     foreach($days as $day)
                     {
@@ -89,7 +88,7 @@
                                 array_push($remove, $officeHours);
                                 
 ?>
-                        <td><?= readHours($officeHours['start_time']) ?>-<?= readHours($officeHours['end_time']) ?></td>
+                            <td><?= readHours($officeHours['start_time']) ?>-<?= readHours($officeHours['end_time']) ?></td>
 <?php
                             }
                         }
@@ -103,16 +102,16 @@
                         }
                     }
 ?>
-                    </tr>
+                        </tr>
 <?php
                     
                     $count--;
                 }
 ?>
-                </table>
-                
-            </div>                    
-        </div>
+                    </table>
+                </div>
+                    
+    </div>
 
 
 <?php 

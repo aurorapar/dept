@@ -49,7 +49,7 @@ header
 {
     width: 1200px;
     height: 80px;
-    margin: 0 auto;
+    margin: auto;
     margin-top: 20px;
     text-align: center;    
 }
@@ -103,19 +103,17 @@ header ul li
 #content
 {
     border-radius: 15px;
-    margin: 0 auto;
+    margin: auto;
     background: white;
-    width: 1500px;
+    width: 70%;
     margin-top: 300px;
-    
 }
 
 .content-focus
 {
     border-radius: 15px;
     margin-left: 25px;
-    width: 900px;
-    color: white;
+    width: 50%;
     outline-style: solid;
     padding: 20px 20px 20px 20px;
     display: inline-block;
@@ -125,14 +123,7 @@ header ul li
 {
     float: right;
     padding-left: 15px;
-    width: 200px;
-}
-
-.content-focus-right-fac
-{
-    float: right;
-    padding-left: 15px;
-    width: 200px;
+    width: 20%;
 }
 
 .content-focus img
@@ -147,30 +138,56 @@ header ul li
     margin-bottom: 20px;
 }
 
+.content-focus-fac
+{
+    width: 90%;
+    background-color: white;
+    margin-left: 50px;
+    display: inline-block;
+}
+
 .facItem
 {
     border-radius: 15px;
     float:left;
     outline-style: none;
-    width:500px;  
-    padding: 20px 20px 20px 20px;
-    margin-left:15px;
-    margin-bottom:20px;
+    width:30%;  
+    min-height: 155px;
+    padding: 20px 1% 20px 1%;
+    margin: 0px 0px 1% 1%;
 }
 
-.fr-fac
+
+.content-focus-right-fac
 {
-    width: 300px;
+    width: 20%;
+    margin: auto;
+    width: 50%;
 }
 
 .facimage
 {
-    max-height: 150px;
+    max-width: 111px;    
 }
 
 .centeredItem
 {
-    margin-left: 50px;
+    margin: auto;
+}
+
+.credits
+{
+    width: 30%;
+}
+
+.hours-table
+{
+    display: none;
+}
+
+.clearfix
+{
+    clear: both;
 }
 
 footer

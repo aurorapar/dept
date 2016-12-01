@@ -35,7 +35,7 @@ $(document).ready(function(){
 			
 			$.each(days,function(index,item){
 			$('#clear'+ item +'3').on("click",function(){
-			$('#start'+ item + '3').val("null");
+				$('#start'+ item + '3').val("null");
 			$('#end'+ item + '3').val("null");
 			$('#'+ item +'3').hide();
 			$('#button' + item +'2').show();

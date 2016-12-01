@@ -30,14 +30,11 @@
     </header>
     
     <div id="content" class="nonheader">
-         
-         <?php if($_SERVER['REQUEST_URI'] == '/dept/index.php')
+         <?php if($_SERVER['REQUEST_URI'] == '/dept/index.php' or $_SERVER['REQUEST_URI'] == '/dept/')
                 {
                     include("news.php");
                 }
         ?>
-         
-         <div class="content-focus schoolColors contentItem">
          
         
         

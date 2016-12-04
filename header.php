@@ -21,23 +21,29 @@
         </div>
         
         <ul id="header-list">
-            <li class="news-element schoolColors"><a href="index.php">WSU Home</a></li>
-            <li class="news-element schoolColors"><a href="projects.php">Department Projects</a></li>
+            <li class="news-element schoolColors"><a href="http://www.winona.edu/">WSU Home</a></li>
+            <li class="news-element schoolColors"><a href="index.php">CS Deptartment</a></li>
+            <li class="news-element schoolColors"><a href="index.php">Department Projects</a></li>
             <li class="news-element schoolColors"><a href="faculty.php">Faculty</a></li>
-            <li class="news-element schoolColors"><a href="opportunities.php">Opportunities</a></li>
+            <li class="news-element schoolColors"><a href="index.php">Opportunities</a></li>
         </ul>
         
     </header>
     
     <div id="content" class="nonheader">
-         
-         <?php if($_SERVER['REQUEST_URI'] == '/dept/index.php')
+         <?php if($_SERVER['REQUEST_URI'] == '/dept/index.php' or $_SERVER['REQUEST_URI'] == '/dept/')
                 {
                     include("news.php");
                 }
         ?>
-         
-         <div class="content-focus schoolColors contentItem">
+        <?php if($_SERVER['REQUEST_URI'] != '/dept/faculty.php')
+                {
+?>                    <div class="content-focus schoolColors">
+<?php
+                    
+                }
+        ?>
+            
          
         
         

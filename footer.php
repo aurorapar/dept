@@ -1,15 +1,16 @@
-
         </div>
     </div>
     <p></p>
     <p></p>
     <p></p>
     <footer>
+        <div class="centeredItem credits">
         Copyright 2016<br>
-        Aurora Pariseau<br>
-        Catelyn Holm<br>
-        Matthew Ladin<br>
-        Ronald Hawley<br>
+        Aurora Pariseau,
+        Catelyn Holm,
+        Matthew Ladin,
+        Ronald Hawley
+        </div>
     </footer>
 </body>
 

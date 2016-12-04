@@ -1,4 +1,4 @@
-        <div id="news" class="schoolColors contentItem">
+        <div id="news" class="content-focus schoolColors">
         
         <!-- Would normally dynamically include any news items
         
@@ -8,11 +8,13 @@
             
         -->
             
-            <ul><h3>News Item</h3>
+            <ul>
+                <li><h3>News Item</h3></li>
                 <li>This is some news information</li>
             </ul>
             
-            <ul><h3>News Item</h3>
+            <ul>
+                <li><h3>News Item</h3></li>
                 <li>This is some news information</li>
             </ul>
             

@@ -1,98 +1,146 @@
 <?php
 	include('header.php');
 ?>
-	<form action="confirmation.php" method="post">
-	
+</div>
+<div class="content-focus schoolColors">
+	<div style="float:left">
 		<ul>
 			<li>
-				<label >Name:</label>
-				<input type="text" name="personname" placeholder="Your Name" required>
+				<label >Name:</label><br>
+				<input type="text" name="personname" placeholder="Your Name" required><br><br>
 			</li>
 			<li>
-				<label >E-Mail:</label>
-				<input type="email" name="personemail" placeholder="YourEmail@winona.edu" required>
+				<label >E-Mail:</label><br>
+				<input type="email" name="personemail" placeholder="YourEmail@winona.edu" required><br><br>
 			</li>
 			<li>
-			<label>Phone Number:</label>
-			<input id="phonenum" type="tel" pattern="^\d{3}-\d{4}$" maxlength=9>
+			<label>Phone Number:</label><br>
+			<input id="phonenum" type="tel" pattern="^\d{3}-\d{4}$" maxlength=9><br><br>
 			</li>
 			<li>
-			<label>Office Number</label>
-			<input id="officnum" type="text" maxlength=6>
-			</ul>
+			<label>Office Number</label><br>
+			<input id="officnum" type="text" maxlength=6><br><br>
+        </ul>
+    </div>
+        
+        <div class="content-focus-right notes">
+            <li><label>Notes</label><br>
+            <textarea name="notes" style="width:100%; height:150px"></textarea>
+        </div>
 			
+
+	<h3 style="clear:left">Office Hours</h3>
+    <h4 style="clear:left">This resets ALL office hours of the day you change. Make sure to include all times for that day!</h2>
+    <table>
+    <tr>
 <?php
-	print"<h3>Office Hours</h3>";
     $days = Array('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday');
     foreach($days as $day)
+    {
+?>
+        <th><?= $day?></th>
+<?php
+    }
+?>
+    </tr>
+    <tr>
+<?php
+    foreach($days as $day)
     { 
+?>
+        <td>
+<?php
 	  for($count=1;$count<=3; $count++)
 	  {
-		 
-	print"<div id=\"$day$count\" >";
-		if($count==1){
-			print "$day <br>";
-		}
-
-		print "<label>Start Time</label><br><select id=\"start$day$count\" name=\"start$day$count\">";
-		print "<option label=\" \" value=\"null \"> </option>";
+ ?>
+        <div id="<?= $day ?><?= $count ?>" >
+<?php
+		
+?>
+		<label>Start Time</label><br><select id="start<?= $day?><?=$count?>" name="start<?= $day?><?=$count?>">
+		<option label=" " value="null "> </option>
+<?php
 		$am=7;
         $pm=1;
         while($am <= 11)
 			
         {	
-				
-            print "<option value=\"start$am\">$am:00 AM </option>";
-			print "<option value=\"start$am:30\">$am:30 AM </option>";
+?>
+            <option value="start<?= $am ?>"><?= $am ?>:00 AM </option>
+			<option value="start<?= $am ?>:30"><?= $am ?>:30 AM </option>
+<?php
             $am++;
         }
-		print "<option value=\"start12\">12:00 PM </option>";
-		print "<option value=\"start12:30\">12:30 PM </option>";
+?>
+		<option value="start12">12:00 PM </option>
+		<option value="start12:30">12:30 PM </option>
+<?php
 	while($pm<=6)
 	{
-		 print "<option value=\"start$pm\">$pm:00 PM </option>";
-		print "<option value=\"start$pm:30\">$pm:30 PM </option>";
+?>
+		 <option value="start<?= $pm ?>"><?= $pm ?>:00 PM </option>
+		<option value="start<?= $pm ?>:30"><?= $pm ?>:30 PM </option>
+<?php
 		$pm++;	
 	}
-	print"</select>";
-	print"<br>";
-	print "<label>End Time</label><br><select id=\"end$day$count\" name=\"end$day$count\">";
-	print "<option label=\" \" value=\"null\"> </option>";
+?>
+	</select>
+	<br>
+	<label>End Time</label><br><select id="end<?= $day ?><?= $count ?>" name="end<?= $day ?><?= $count ?>">
+	<option label=" " value="null"> </option>
+<?php
 		$am=7;
         $pm=1;
         while($am <= 11)	
         {	
-				
-            print "<option value=\"end$am\">$am:00 AM </option>";
-			print "<option value=\"end$am:30\">$am:30 AM </option>";
+?>
+            <option value="end<?= $am ?>"><?= $am ?>:00 AM </option>
+			<option value="end<?= $am ?>:30"><?= $am ?>:30 AM </option>
+<?php
             $am++;
         }
-		print "<option value=\"end12\">12:00 PM </option>";
-		print "<option value=\"end12:30\">12:30 PM </option>";
+?>
+		<option value="end12">12:00 PM </option>
+		<option value="end12:30">12:30 PM </option>
+<?php
 	while($pm<=6)
 	{
-		 print "<option value=\"end$pm\">$pm:00 PM </option>";
-		print "<option value=\"start$pm:30\">$pm:30 PM </option>";
+?>
+		<option value="end<?= $pm ?>"><?= $pm ?>:00 PM </option>
+		<option value="start<?= $pm ?>:30"><?= $pm ?>:30 PM </option>
+<?php
 		$pm++;	
 		
 	}
-	print"</select><br>";
-	if($count<3){
-	print"<button type=\"button\" id=\"button$day$count\">Add Time</button>";
-	}
+?>
+	 </select><br>
+<?php
+	if($count<3)
+    {
+?>
+        <button type="button" id="button<?= $day ?><?= $count ?>">Add Time</button>
+<?php
+    }
 	if($count>1){
-		print"<button type=\"button\" id=\"clear$day$count\">Remove time</button>";
+?>
+		<button type="button" id="clear<?= $day?><?=$count?>">Remove time</button>
+<?php
 	}
-
-	print"</div>";
-    print"<br>";
+?>
+    </div>
+    <br>
+<?php
 	  }//end of for loop
-
-	
+?>  
+    </td>
+<?php
     }
 ?>
-<button type="submit" id="submit">Submit</button>
-	</form>
- 
- </body>
-</html>
+</table>
+<button id="submit">Submit</button>
+	
+</div>
+
+<?php
+    include("footer.php");
+?>

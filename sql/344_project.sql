@@ -39,18 +39,20 @@ CREATE TABLE `faculty` (
   `pref_contact_method` varchar(10) NOT NULL,
   `room_num` varchar(6) NOT NULL,
   `building` varchar(15) NOT NULL,
-  `alma_mater` varchar(40) NOT NULL
+  `alma_mater` varchar(40) NOT NULL,
+  `degree` varchar(8) NOT NULL,
+  `notes` varchar(1000) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `faculty`
 --
 
-INSERT INTO `faculty` (`faculty_id`, `name`, `phone_num`, `email`, `pref_contact_method`, `room_num`, `building`, `alma_mater`) VALUES
-('1111', 'Joan Francioni', '5074572336', 'jfrancioni@winona.edu', 'Email', '108D', 'Watkins', 'Florida State University'),
-('2222', 'Gerald Cichanowski', '5074575385', 'gcichanowski@winona.edu', 'Phone', '108', 'Watkins', 'Michigan State University'),
-('3333', 'Narayan Debnath', '5074575261', 'ndebnath@winona.edu', 'Email', '108F', 'Watkins', 'Jadavpur University'),
-('4444', 'Mingrui Zhang', '5074572496', 'mzhang@winona.edu', 'Email', '103A', 'Watkins', 'University of South Florida');
+INSERT INTO `faculty` (`faculty_id`, `name`, `phone_num`, `email`, `pref_contact_method`, `room_num`, `building`, `alma_mater`, `degree`, `notes`) VALUES
+('1111', 'Joan Francioni', '5074572336', 'jfrancioni@winona.edu', 'Email', '108D', 'Watkins', 'Florida State University', 'Ph.D.', ''),
+('2222', 'Gerald Cichanowski', '5074575385', 'gcichanowski@winona.edu', 'Phone', '108', 'Watkins', 'Michigan State University', 'Ph.D.', ''),
+('3333', 'Narayan Debnath', '5074575261', 'ndebnath@winona.edu', 'Email', '108F', 'Watkins', 'Jadavpur University', 'Ph.D.', ''),
+('4444', 'Mingrui Zhang', '5074572496', 'mzhang@winona.edu', 'Email', '103A', 'Watkins', 'University of South Florida', 'Ph.D.', '');
 
 -- --------------------------------------------------------
 

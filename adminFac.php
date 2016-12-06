@@ -30,7 +30,7 @@
 			
 
 	<h3 style="clear:left">Office Hours</h3>
-    <h4 style="clear:left">This resets ALL office hours of the day you change. Make sure to include all times for that day!</h2>
+    <h4 style="clear:left">This resets ALL office hours of the day you change. Make sure to include all times for that day!</h4>
     <table>
     <tr>
 <?php
@@ -60,7 +60,7 @@
 		<label>Start Time</label><br><select id="start<?= $day?><?=$count?>" name="start<?= $day?><?=$count?>">
 		<option label=" " value="null "> </option>
 <?php
-	$mil_time=7
+	$mil_time=7;
 	$am=7;
         $pm=1;
         while($am <= 11)

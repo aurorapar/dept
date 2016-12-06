@@ -60,28 +60,32 @@
 		<label>Start Time</label><br><select id="start<?= $day?><?=$count?>" name="start<?= $day?><?=$count?>">
 		<option label=" " value="null "> </option>
 <?php
-		$am=7;
+	$mil_time=7
+	$am=7;
         $pm=1;
         while($am <= 11)
 			
         {	
 ?>
-            <option value="start<?= $am ?>"><?= $am ?>:00 AM </option>
-			<option value="start<?= $am ?>:30"><?= $am ?>:30 AM </option>
+            <option value="start<?= $mil_time ?>:00"><?= $am ?>:00 AM </option>
+			<option value="start<?= $mil_time ?>:30"><?= $am ?>:30 AM </option>
 <?php
             $am++;
+	    $mil_time++;
         }
 ?>
-		<option value="start12">12:00 PM </option>
-		<option value="start12:30">12:30 PM </option>
+		<option value="start<?= $mil_time ?>:00">12:00 PM </option>
+		<option value="start<?= $mil_time ?>:30">12:30 PM </option>
 <?php
+	 $mil_time++;
 	while($pm<=6)
 	{
 ?>
-		 <option value="start<?= $pm ?>"><?= $pm ?>:00 PM </option>
-		<option value="start<?= $pm ?>:30"><?= $pm ?>:30 PM </option>
+		 <option value="start<?= $mil_time ?>:00"><?= $pm ?>:00 PM </option>
+		<option value="start<?= $mil_time ?>:30"><?= $pm ?>:30 PM </option>
 <?php
-		$pm++;	
+		$pm++;
+	 	$mil_time++;
 	}
 ?>
 	</select>

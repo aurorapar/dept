@@ -5,11 +5,9 @@
     <p></p>
     <footer>
         <div class="centeredItem credits">
-        Copyright 2016<br>
-        Aurora Pariseau,
-        Catelyn Holm,
-        Matthew Ladin,
-        Ronald Hawley
+        Developed by: Ronald Hawley, Catelyn Holm, Matthew Ladin, Aurora Pariseau <br>
+        For use of the computer science department at WSU <br>
+        Copyright 2016
         </div>
     </footer>
 </body>

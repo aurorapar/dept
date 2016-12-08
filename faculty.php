@@ -27,6 +27,7 @@
                 <br>
                 <?= $row['degree']?>, <?= $row['alma_mater'] ?>
             </div>
+            
             <div class="content-focus-bottom hours-table">
             </div>
     </div>

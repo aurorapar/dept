@@ -1,46 +1,54 @@
-<?php
+<?php    
 
-    if(!isset($_POST['profName']))
+    // This would be acquired from authentication page
+    // Hardcoded only for testing purposes!
+    $_POST['profId'] = 1111;
+
+    if(!isset($_POST['profId']))
     {
         print 'Error: no teacher selected<br />';
     }
+    
+    $response = '';
+
     else
     {
         $days = Array('M', 'T', 'W', 'R', 'F');
         $dayNames = Array('M' => "Monday", 'T' => "Tuesday", 'W' => "Wednesday", 'R' => "Thursday", 'F' => "Friday");
         
-        $profName = $_POST['profName'];
-        $profId = '';        
+        $profId = $_POST['profId'];   
         
         $db = new PDO("mysql:dbname=344_project;host=localhost","root");
         
-        $query =  "SELECT * FROM `faculty` WHERE name = '" . $profName . "';";
+        $query =  "SELECT * FROM `faculty` WHERE faculty_id = '" . $profId . "';";
         $queryReturn = $db->query($query);
         
-        $img = str_replace(' ', '', $profName);
+        $profName = '';
+        $img = '';
         $phone = '';
+        $phoneOut = '';
         $email = '';
         $location = '';
         $contact = '';
         $degree = '';
         $university = '';
         foreach($queryReturn as $row)
-        {            
-            $phone = substr_replace($row['phone_num'], "-", 3, 0);
-            $phone = substr_replace($phone, "-", 7, 0);
+        {
+            $profName = $row['name'];
+            $img = str_replace(' ', '', $profName);
+            $phone = $row['phone_num'];
+            $phoneOut = substr_replace($phone, "-", 3, 0);
+            $phoneOut = substr_replace($phoneOut, "-", 7, 0);
             $email = $row['email'];
             $contact = $row['pref_contact_method'];
             $location = $row['building'] . ' ' . $row['room_num'];
-            $profId = $row['faculty_id'];
             $degree = $row['degree'];
             $university = $row['alma_mater'];
         }
         
-        
-        
         $response = '
                     <div class="facItem schoolColors">
-                        <h2>Current Display</h2>
+                        <h2>Updated Display</h2>
                         <img class="facimage" src="http://localhost/dept/images/'. $img .'.jpg" alt="'. $profName .'\'s picture">
 
                         <div class="content-focus-right content-focus-right-fac"> 
@@ -49,7 +57,7 @@
                             '. $degree .', '. $university .'
                         </div>
                         <div class="content-focus-bottom hours-table">                        
-                '. $phone .'<br>
+                '. $phoneOut .'<br>
                 '. $row['email'] .'<br>
                 Preferred Communication: '. $contact . '<br>
                 '. $location . '<br><br>
@@ -57,12 +65,6 @@
                 <h3>Office Hours</h3>
                 <table>                
                     <tr>';
-        
-        
-                
-        
-
-        
         
         $query = "SELECT * FROM `office_hours` WHERE faculty_id = " . $profId . ' ORDER BY start_time;';
         $results = $db->query($query);
@@ -144,6 +146,10 @@
     </div>';
     }
 
+    
+    $response = $response . '
+        </div>';    
+    
     print $response;
     
     function readHours($hoursRead)

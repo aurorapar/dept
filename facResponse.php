@@ -21,6 +21,7 @@
         $email = '';
         $location = '';
         $contact = '';
+        $notes = '';
         foreach($queryReturn as $row)
         {            
             $phone = substr_replace($row['phone_num'], "-", 3, 0);
@@ -29,6 +30,7 @@
             $contact = $row['pref_contact_method'];
             $location = $row['building'] . ' ' . $row['room_num'];
             $profId = $row['faculty_id'];
+            $notes = $row['notes'];
         }
         
         $response = '
@@ -36,6 +38,7 @@
                 '. $row['email'] .'<br>
                 Preferred Communication: '. $contact . '<br>
                 '. $location . '<br><br>
+                <div class="notes-display">'. $notes . '</div><br><br>
             
                 <h3>Office Hours</h3>
                 <table>                
@@ -83,7 +86,9 @@
                 // need to be added to make it better
                 // or some better SQL
                 
-                // Get the time with a SQL Statement JOIN, WHERE day=$day !
+                // 
+                //  SELECT start_time FROM `office_hours` WHERE faculty_id = '1111' AND day = 'T' ORDER BY start_time;
+                // 
                 $count = max($splitHours) - 1;
                 while($count >= 0)
                 {

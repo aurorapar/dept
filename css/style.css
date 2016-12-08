@@ -25,6 +25,7 @@ td
 {
     text-align: center;
     vertical-align: top;
+    width: 10%;
 }
 
 #banner 
@@ -241,6 +242,12 @@ header ul li
 .clearfix
 {
     clear: both;
+}
+
+.notes-display
+{
+    text-indent: 50px;
+    width: inherit;
 }
 
 footer

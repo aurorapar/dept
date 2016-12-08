@@ -1,15 +1,10 @@
 $(document).ready( function() {
-        if(window.location.pathname == '/dept/adminFac.php')
-        {
-            $( ".content-focus" ).css("float", "none").width("70%").css("margin-left", "auto").css("margin-right", "auto").css("display", "block");
-
-            $( ".content-focus:first" ).hide();
-            
+        if(window.location.pathname.endsWith('adminFac.php'))
+        {            
             // This would be passed via an authentication page
-            var name = 'Joan Francioni';
-            setCurrentDisplay(name);
             
-            $( "td" ).width("10%");
+            setStyles();            
+            $( "#update" ).click(sendValues);
         }
         else
         {
@@ -17,6 +12,30 @@ $(document).ready( function() {
             $(".facItem").click(showInfo);
         }
 });
+
+function sendValues()
+{
+    data = $( "#updateForm" ).serialize();
+    
+    var request = $.ajax({
+            url: "update.php",
+            type: "POST",
+            data: {
+                "data": $( "#updateForm").serialize(),
+            },
+            dataType: "text"
+        });
+        request.done(function(msg) {
+            $( ".facItem" ).html(msg);
+            setStyles();
+        });
+        request.fail(function(msg) {
+            alert("AJAX CALL FAILED");
+        });
+            
+    event.preventDefault();    
+       
+}   
 
 function showInfo()
 {
@@ -64,24 +83,35 @@ function showInfo()
     }
 }
 
-function setCurrentDisplay(teacher)
-{
-        var changeMe = $( "#content" );
+function updateDisplay(teacher)
+{    
+        changeMe = $( ".facItem" );
         
         var request = $.ajax({
             url: "adminResponse.php",
             type: "POST",
             data: {
                 "profName": teacher,
-            },
-            dataType: "text"
+            }
         });
         request.done(function(msg) {
-            changeMe.prepend(msg);
-            $( ".facItem").css("float", "none").width("70%").css("margin-left", "auto").css("margin-right", "auto").css("display", "block");
+            alert(msg);
+            changeMe.html(msg);
             $( ".hours-table" ).show();
+            setStyles();
+
         });
         request.fail(function(msg) {
             alert("AJAX CALL FAILED");
         });
+}
+
+function setStyles()
+{
+    $( ".content-focus" ).css("float", "none").width("70%").css("margin-left", "auto").css("margin-right", "auto").css("display", "block");
+    $( ".facItem").css("float", "none").width("70%").css("margin-left", "auto").css("margin-right", "auto").css("display", "block");
+    setTimeButtons();
+    $( ".hours-table" ).show();
+    $( ".content-focus:first" ).hide();
+    $ ( "input[type=hidden" ).val( $( "h3 > a" ).text());
 }

@@ -31,12 +31,12 @@
     </header>
     
     <div id="content" class="nonheader">
-         <?php if($_SERVER['REQUEST_URI'] == '/dept/index.php' or $_SERVER['REQUEST_URI'] == '/dept/')
+         <?php if($_SERVER['PHP_SELF'] == '/index.php')
                 {
                     include("news.php");
                 }
         ?>
-        <?php if($_SERVER['REQUEST_URI'] != '/dept/faculty.php')
+        <?php if($_SERVER['PHP_SELF'] != '/faculty.php')
                 {
 ?>                    <div class="content-focus schoolColors">
 <?php

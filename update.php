@@ -9,7 +9,11 @@
     {
         $key = array_search($dataVar, $data);
         $dataVar = trim($dataVar, " \t\n\r\0\x0B");
-        $data[$key] = htmlspecialchars( strip_tags($dataVar) );
+        if($key != 'notes')
+        {
+            $dataVar = htmlspecialchars( strip_tags($dataVar) );
+        }
+        $data[$key] = $dataVar;
     }
     
     //=========================================================================================================
@@ -253,7 +257,7 @@
             '. $email .'<br>
             Preferred Communication: '. $contact . '<br>
             '. $location . '<br><br>
-            ' . $notes . '<br><br>
+            <div class="notes-display">'. $notes . '</div><br><br>
         
             <h3>Office Hours</h3>
             <table>                

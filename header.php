@@ -9,6 +9,8 @@
       crossorigin="anonymous"></script>
     <script src="js/facultyMod.js"></script>
     <script src="js/adminJsForm.js"></script>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
 </head>
 
 <body>

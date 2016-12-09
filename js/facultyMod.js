@@ -13,6 +13,8 @@ $(document).ready( function() {
 
 function sendValues()
 {
+    
+    tinyMCE.triggerSave();
     data = $( "#updateForm" ).serialize();
     
     var request = $.ajax({
@@ -82,28 +84,6 @@ function showInfo()
     }
 }
 
-function updateDisplay(teacher)
-{    
-        changeMe = $( ".facItem" );
-        
-        var request = $.ajax({
-            url: "adminResponse.php",
-            type: "POST",
-            data: {
-                "profName": teacher,
-            }
-        });
-        request.done(function(msg) {
-            alert(msg);
-            changeMe.html(msg);
-            $( ".hours-table" ).show();
-            setStyles();
-
-        });
-        request.fail(function(msg) {
-            alert("AJAX CALL FAILED");
-        });
-}
 
 function setStyles()
 {

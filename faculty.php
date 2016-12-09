@@ -19,7 +19,7 @@
         $phone = substr_replace($phone, "-", 7, 0);
 ?>
     <div class="facItem schoolColors">
-            <img class="facimage" src="http://localhost/dept/images/<?= $img ?>.jpg" alt="<?= $row['name'] ?>'s picture">
+            <img class="facimage" src="./images/<?= $img ?>.jpg" alt="<?= $row['name'] ?>'s picture">
 
             <div class="content-focus-right content-focus-right-fac"> 
                 <h3><a><?= $row['name'] ?></a></h3>

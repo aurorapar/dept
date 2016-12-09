@@ -4,9 +4,9 @@
     <title>CS Deptartment</title>
     <link href="css/style.css" rel="Stylesheet" type="text/css" />  
     <script
-          src="https://code.jquery.com/jquery-3.1.1.min.js"
-          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-          crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.1.1.js"
+      integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+      crossorigin="anonymous"></script>
     <script src="js/facultyMod.js"></script>
     <script src="js/adminJsForm.js"></script>
 </head>

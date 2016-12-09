@@ -1,8 +1,6 @@
 $(document).ready( function() {
         if(window.location.pathname.endsWith('adminFac.php'))
         {            
-            // This would be passed via an authentication page
-            
             setStyles();            
             $( "#update" ).click(sendValues);
         }
@@ -74,6 +72,7 @@ function showInfo()
         });
         request.done(function(msg) {
             changeMe.html(msg);
+            changeMe.append("Click to close.");
         });
         request.fail(function(msg) {
             alert("AJAX CALL FAILED");

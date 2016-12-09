@@ -1,6 +1,7 @@
 body
 {
     background: lightgrey;
+    font-size: 120%;
 }
 
 form
@@ -126,7 +127,7 @@ header ul li
     border-radius: 15px;
     margin: auto;
     background: white;
-    width: 70%;
+    width: 90%;
     margin-top: 300px;
     padding-top:50px;
     padding-bottom: 50px;
@@ -137,7 +138,7 @@ header ul li
 {
     border-radius: 15px;
     margin-left: 25px;
-    width: 60%;
+    width: 70%;
     outline-style: solid;
     padding: 20px 20px 20px 20px;
     display: inline-block;
@@ -153,7 +154,7 @@ header ul li
 {
     float: right;
     padding-left: 15px;
-    width: 20%;
+    width: 55%;
 }
 
 .notes

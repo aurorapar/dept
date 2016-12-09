@@ -9,13 +9,8 @@
         -->
             
             <ul>
-                <li><h3>News Item</h3></li>
-                <li>This is some news information</li>
-            </ul>
-            
-            <ul>
-                <li><h3>News Item</h3></li>
-                <li>This is some news information</li>
+                <li><h3>Site goes live!</h3></li>
+                <li>12/8/16<br>The website takes off to the public!</li>
             </ul>
             
         </div>

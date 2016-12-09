@@ -1,4 +1,5 @@
 <?php    
+    include("connection.php");
 
     // This would be acquired from authentication page
     // Hardcoded only for testing purposes!
@@ -17,8 +18,6 @@
         $dayNames = Array('M' => "Monday", 'T' => "Tuesday", 'W' => "Wednesday", 'R' => "Thursday", 'F' => "Friday");
         
         $profId = $_POST['profId'];   
-        
-        $db = new PDO("mysql:dbname=344_project;host=localhost","root");
         
         $query =  "SELECT * FROM `faculty` WHERE faculty_id = '" . $profId . "';";
         $queryReturn = $db->query($query);

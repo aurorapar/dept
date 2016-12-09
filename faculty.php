@@ -8,7 +8,6 @@
     
 <?php
     
-    $db = new PDO("mysql:dbname=344_project;host=localhost","root");
     $query = "SELECT * FROM `faculty`;";
     $results = $db->query($query);
     

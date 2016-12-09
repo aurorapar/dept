@@ -31,12 +31,15 @@
     </header>
     
     <div id="content" class="nonheader">
-         <?php if($_SERVER['PHP_SELF'] == '/index.php')
+         <?php 
+                include("connection.php");
+                if(basename($_SERVER['PHP_SELF']) == 'index.php')
                 {
                     include("news.php");
                 }
+                
         ?>
-        <?php if($_SERVER['PHP_SELF'] != '/faculty.php')
+        <?php if(basename($_SERVER['PHP_SELF']) != 'faculty.php')
                 {
 ?>                    <div class="content-focus schoolColors">
 <?php

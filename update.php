@@ -1,6 +1,7 @@
 <?php    
-    $db = new PDO("mysql:dbname=344_project;host=localhost","root");
-
+    
+    include("connection.php");
+    
     $data = $_POST['data'];
     parse_str($data, $data);
     

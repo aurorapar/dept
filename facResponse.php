@@ -1,5 +1,7 @@
 <?php
-
+    
+    include("connection.php")
+    
     if(!isset($_POST['profName']))
     {
         print 'Error: no teacher selected<br />';
@@ -11,8 +13,6 @@
         
         $profName = $_POST['profName'];
         $profId = '';        
-        
-        $db = new PDO("mysql:dbname=344_project;host=localhost","root");
         
         $query =  "SELECT * FROM `faculty` WHERE name = '" . $profName . "';";
         $queryReturn = $db->query($query);

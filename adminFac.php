@@ -1,6 +1,6 @@
 <?php
 	include('header.php');
-    
+    include("connection.php");
     
     $response = '';    
     
@@ -30,8 +30,6 @@
         
         $days = Array('M', 'T', 'W', 'R', 'F');
         $dayNames = Array('M' => "Monday", 'T' => "Tuesday", 'W' => "Wednesday", 'R' => "Thursday", 'F' => "Friday");
-        
-        $db = new PDO("mysql:dbname=344_project;host=localhost","root");
         
         $query =  "SELECT * FROM `faculty` WHERE faculty_id = '" . $profId . "';";
         $queryReturn = $db->query($query);

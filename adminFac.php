@@ -57,7 +57,7 @@
                     </div>
                     <div class="facItem schoolColors">
                         <h2>Current Display</h2>
-                        <img class="facimage" src="http://localhost/dept/images/'. $img .'.jpg" alt="'. $profName .'\'s picture">
+                        <img class="facimage" src="./images/'. $img .'.jpg" alt="'. $profName .'\'s picture">
 
                         <div class="content-focus-right content-focus-right-fac"> 
                             <h3><a>'. $profName .'</a></h3>

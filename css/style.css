@@ -5,8 +5,7 @@ body
 
 form
 {
-    margin-top: 20px;
-    margin-bottom: 20px;
+	margin: 20px 0px;
 }
 
 form ul
@@ -17,8 +16,7 @@ form ul
 }
 form label,select,input
 {
-	margin-top:5px;
-	margin-right:5px;
+	margin: 5px 5px 0px 0px;
 }
 
 td
@@ -78,8 +76,7 @@ header ul li
 {
     text-align: center;
     display:inline-block;
-    margin-left: 15px;
-    margin-right: 15px;
+	margin: 0px 15px;
     height: 20px;
     padding: 10px;
     font-size: 20px;
@@ -91,7 +88,7 @@ header ul li
     float:left;
     width: 300px;
     margin-left: 50px;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     list-style-type: none;    
     font-size: 20px;    
     border-radius: 15px;
@@ -128,9 +125,7 @@ header ul li
     background: white;
     width: 70%;
     margin-top: 300px;
-    padding-top:50px;
-    padding-bottom: 50px;
-    
+    padding-top:50px 0px;
 }
 
 .content-focus
@@ -139,7 +134,7 @@ header ul li
     margin-left: 25px;
     width: 60%;
     outline-style: solid;
-    padding: 20px 20px 20px 20px;
+    padding: 20px;
     display: inline-block;
 }
 
@@ -203,7 +198,7 @@ header ul li
     outline-style: none;
     width:30%;  
     min-height: 170px;
-    padding: 20px 1% 20px 1%;
+    padding: 20px 1%;
     margin: 0px 0px 1% 1%;
 }
 
@@ -214,7 +209,6 @@ header ul li
 
 .content-focus-right-fac
 {
-    width: 20%;
     margin: auto;
     width: 50%;
 }
